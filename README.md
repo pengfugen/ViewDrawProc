@@ -46,7 +46,7 @@ View绘制的demo
       >Title:                [width: 600  exactly,      height: 880  at_most]
       >SubTitle:             [width: 600  exactly,      height: 826  at_most]
    >LinearLayout [vertical]: [width: 600  exactly,      height: 880  at_most]
-LinearLayout [horizontal]:   [width: 720  exactly,      height: 880  at_most]
+LinearLayout [horizontal]: [width: 720  exactly,      height: 880  at_most]
 
 下面又重复一次
 
@@ -60,7 +60,7 @@ LinearLayout [horizontal]:   [width: 720  exactly,      height: 880  at_most]
       >Title:                [width: 600  exactly,      height: 1024  at_most]
       >SubTitle:             [width: 600  exactly,      height: 970   at_most]
    >LinearLayout [vertical]: [width: 600  exactly,      height: 1024  at_most]
-LinearLayout [horizontal]:   [width: 720  exactly,      height: 1024  at_most]
+LinearLayout [horizontal]: [width: 720  exactly,      height: 1024  at_most]
 
 LinearLayout [horizontal]: onLayout
 ProfilePhoto: onLayout
