@@ -72,6 +72,11 @@ ProfilePhoto: onDraw
 Title: onDraw
 SubTitle: onDraw
 Menu: onDraw
+垂直的LinearLayout被测量了两次。第一次的时候，父LinearLayout要求以UNSPECIFIED spec的方式来测量。导致了垂直的LinearLayout也以这种方式测量它的  
+子view.此时它在它们返回值的基础上以EXACTLY spec的方式测量它的子view，但是它还没有结束。一旦在测量ProfilePhoto和Menu之后，父布局知道可用于垂直  
+的LinearLayout的尺寸大小。以AT_MOST height对Title 和 Subtitle测量之后导致了第二次传值。显然，每一个TextView (Title and Subtitle)被测量3次。  
+第二次传值创建或者废弃Layouts，这些操作是昂贵的。如果想ViewGroup发挥更好的性能，首要的工作就是免去对TextViews的测量传值工作。  
+
 为什么没有LinearLayout [horizontal]和LinearLayout [vertical]的onDraw？
 1) ViewGroup默认情况下，会被设置成WILL_NOT_DRAW，这是从性能考虑，这样一来，onDraw就不会被调用了。
 
