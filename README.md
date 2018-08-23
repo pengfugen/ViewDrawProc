@@ -73,5 +73,12 @@ Title: onDraw
 SubTitle: onDraw
 Menu: onDraw
 为什么没有LinearLayout [horizontal]和LinearLayout [vertical]的onDraw？
+1) ViewGroup默认情况下，会被设置成WILL_NOT_DRAW，这是从性能考虑，这样一来，onDraw就不会被调用了。
+
+2) 如果我们要重要一个ViweGroup的onDraw方法，有两种方法：
+
+      1, 在构造函数里面，给其设置一个颜色，如#00000000。
+
+      2, 在构造函数里面，调用setWillNotDraw(false)，去掉其WILL_NOT_DRAW flag。
  ```
 
