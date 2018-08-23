@@ -36,31 +36,33 @@ View绘制的demo
  ```
  上述布局在华硕手机上的绘制过程：
   ```
+  LinearLayout [horizontal]: [width: 720  exactly,      height: 880  at_most]
    >ProfilePhoto:            [width: 80   exactly,      height: 80   exactly]
+   >LinearLayout [vertical]: [width: 720  unspecified,  height: 880  unspecified]
       >Title:                [width: 720  unspecified,  height: 880  unspecified]
       >SubTitle:             [width: 720  unspecified,  height: 826  unspecified]
       >Title:                [width: 230  exactly,      height: 54   exactly]
       >SubTitle:             [width: 230  exactly,      height: 33   exactly]
-   >LinearLayout [vertical]: [width: 720  unspecified,  height: 880  unspecified]
    >Menu:                    [width: 40   exactly,      height: 40   exactly]
+   >LinearLayout [vertical]: [width: 600  exactly,      height: 880  at_most]
       >Title:                [width: 600  exactly,      height: 880  at_most]
       >SubTitle:             [width: 600  exactly,      height: 826  at_most]
-   >LinearLayout [vertical]: [width: 600  exactly,      height: 880  at_most]
-LinearLayout [horizontal]: [width: 720  exactly,      height: 880  at_most]
+   
+
 
 下面又重复一次
 
+LinearLayout [horizontal]: [width: 720  exactly,      height: 1024  at_most]
    >ProfilePhoto:            [width: 80   exactly,      height: 80    exactly]
+   >LinearLayout [vertical]: [width: 720  unspecified,  height: 1024  unspecified]
       >Title:                [width: 720  unspecified,  height: 1024  unspecified]
       >SubTitle:             [width: 720  unspecified,  height: 970   unspecified]
       >Title:                [width: 230  exactly,      height: 54    exactly]
       >SubTitle:             [width: 230  exactly,      height: 33    exactly]
-   >LinearLayout [vertical]: [width: 720  unspecified,  height: 1024  unspecified]
    >Menu:                    [width: 40   exactly,      height: 40    exactly]
+   >LinearLayout [vertical]: [width: 600  exactly,      height: 1024  at_most]
       >Title:                [width: 600  exactly,      height: 1024  at_most]
       >SubTitle:             [width: 600  exactly,      height: 970   at_most]
-   >LinearLayout [vertical]: [width: 600  exactly,      height: 1024  at_most]
-LinearLayout [horizontal]: [width: 720  exactly,      height: 1024  at_most]
 
 LinearLayout [horizontal]: onLayout
 ProfilePhoto: onLayout
