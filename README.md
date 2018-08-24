@@ -50,7 +50,7 @@ View绘制的demo
    
 
 
-下面又重复一次
+下面又重复一次measure
 
 LinearLayout [horizontal]: [width: 720  exactly,      height: 1024  at_most]
    >ProfilePhoto:            [width: 80   exactly,      height: 80    exactly]
@@ -98,6 +98,7 @@ Menu:         onDraw
   >Menu:               [width: 40   exactly,  height: 40    exactly]
   >Title:              [width: 600  at_most,  height: 880   at_most]
   >SubTitle:           [width: 600  at_most,  height: 826   at_most]
+又重复一次measure
 ProfilePhotoLayout:   [width: 720  exactly,  height: 1024  at_most]
   >ProfilePhoto:       [width: 80   exactly,  height: 80    exactly]
   >Menu:               [width: 40   exactly,  height: 40    exactly]
