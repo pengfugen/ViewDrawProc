@@ -2,38 +2,33 @@ package pfg.com.viewdrawproc;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.os.Debug;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 /**
- * Created by fpeng3 on 2018/8/22.
+ * Created by fpeng3 on 2018/8/23.
  */
 
-public class ProfilePhoto extends ImageView {
+public class MyRelativeLayout extends RelativeLayout {
 
-    public String TAG = "ProfilePhoto";
+    private static final String TAG = "MyRelativeLayout";
 
-    public ProfilePhoto(Context context) {
+    MyRelativeLayout(Context context) {
         super(context);
     }
 
-    public ProfilePhoto(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    MyRelativeLayout(Context context, AttributeSet attSet) {
+        super(context, attSet);
     }
 
-    public ProfilePhoto(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    MyRelativeLayout(Context context, AttributeSet attSet, int defStyleAttr) {
+        super(context, attSet, defStyleAttr);
     }
 
-    public ProfilePhoto(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        //setBackground(getResources().getDrawable(R.drawable.photo));
-    }
-
-    protected void setTag(String tag) {
-        TAG = tag;
+    MyRelativeLayout(Context context, AttributeSet attSet, int defStyleAttr, int defStyleRes) {
+        super(context, attSet, defStyleAttr, defStyleRes);
     }
 
     @Override
@@ -44,20 +39,25 @@ public class ProfilePhoto extends ImageView {
         int height = MeasureSpec.getSize(heightMeasureSpec);
         MyLog.logd(TAG, "[width: "+width+"  "+widthmode+",  height: "+height+"  "+heightmode+"]");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-        //Debug.startMethodTracing(TAG+" onMeasure ");
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        MyLog.logd(TAG, "onLayout left:"+left+", top="+top+", right="+right+", bottom="+bottom);
+        MyLog.logd(TAG, "onLayout");
         super.onLayout(changed, left, top, right, bottom);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
         MyLog.logd(TAG, "onDraw");
+        super.onDraw(canvas);
         //Debug.stopMethodTracing();
+    }
+
+    // drawChild流程走了，为什么child view的onDraw没有走进去？
+    @Override
+    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+        MyLog.logd(TAG, "drawChild child:"+child.getId());
+        return super.drawChild(canvas, child, drawingTime);
     }
 }

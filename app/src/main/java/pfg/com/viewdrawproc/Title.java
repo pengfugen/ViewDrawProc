@@ -49,7 +49,7 @@ public class Title extends TextView {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        MyLog.logd(TAG, "onLayout");
+        MyLog.logd(TAG, "onLayout left:"+left+", top="+top+", right="+right+", bottom="+bottom);
         super.onLayout(changed, left, top, right, bottom);
     }
 

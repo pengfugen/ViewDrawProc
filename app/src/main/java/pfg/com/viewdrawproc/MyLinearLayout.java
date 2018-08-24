@@ -31,7 +31,6 @@ public class MyLinearLayout extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         String widthmode = SpecUtil.getModeString(MeasureSpec.getMode(widthMeasureSpec));
         String heightmode = SpecUtil.getModeString(MeasureSpec.getMode(heightMeasureSpec));
         int width = MeasureSpec.getSize(widthMeasureSpec);
@@ -39,6 +38,7 @@ public class MyLinearLayout extends LinearLayout {
         boolean isHorizontal = (getOrientation() == LinearLayout.HORIZONTAL);
         String TAG = isHorizontal ? "LinearLayout [horizontal]" : "LinearLayout [vertical]";
         MyLog.logd(TAG, "[width: "+width+"  "+widthmode+",  height: "+height+"  "+heightmode+"]");
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //Debug.startMethodTracing(TAG+" onMeasure ");
     }
 
@@ -52,10 +52,10 @@ public class MyLinearLayout extends LinearLayout {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
         boolean isHorizontal = (getOrientation() == LinearLayout.HORIZONTAL);
         String TAG = isHorizontal ? "LinearLayout [horizontal]" : "LinearLayout [vertical]";
         MyLog.logd(TAG, "onDraw");
+        super.onDraw(canvas);
         //Debug.stopMethodTracing();
     }
 
