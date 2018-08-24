@@ -1,6 +1,6 @@
 # ViewDrawProc
 View绘制的demo  
-第一种布局：  
+## 第一种布局：  
  ```
 <pfg.com.viewdrawproc.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -90,7 +90,7 @@ Menu:         onDraw
       2, 在构造函数里面，调用setWillNotDraw(false)，去掉其WILL_NOT_DRAW flag。
  ```
 
-第三种布局(自定义View)：  
+## 第三种布局(自定义View)：  
 这个布局在华硕手机的绘制流程：
  ```
  ProfilePhotoLayout:   [width: 720  exactly,  height: 880   at_most]
@@ -119,5 +119,8 @@ Menu:         onDraw
 
 RelativeLayout选择子View进行的measure的原则是优先选择没有依赖的view进行。
 这里的ProfilePhoto和Menu都没有layout_toLeftOf等依赖，因此优选进行measure。
-但是onLayout过程还是会按顺序来的。
+但是onLayout过程还是会按顺序来的。  
  ```
+## 启示：
+避免在靠近view层级关系顶层的地方使用RelativeLayout
+
