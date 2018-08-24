@@ -115,4 +115,9 @@ ProfilePhoto: onDraw
 Title:        onDraw
 SubTitle:     onDraw
 Menu:         onDraw
+上述布局明显得到了优化。
+
+RelativeLayout选择子View进行的measure的原则是优先选择没有依赖的view进行。
+这里的ProfilePhoto和Menu都没有layout_toLeftOf等依赖，因此优选进行measure。
+但是onLayout过程还是会按顺序来的。
  ```
