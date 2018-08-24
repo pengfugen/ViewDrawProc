@@ -65,15 +65,16 @@ LinearLayout [horizontal]: [width: 720  exactly,      height: 1024  at_most]
       >SubTitle:             [width: 600  exactly,      height: 970   at_most]
 
 LinearLayout [horizontal]: onLayout
-ProfilePhoto: onLayout
-LinearLayout [vertical]: onLayout
-Title: onLayout
-SubTitle: onLayout
-Menu: onLayout
+ProfilePhoto:              onLayout
+LinearLayout [vertical]:   onLayout
+Title:                     onLayout
+SubTitle:                  onLayout
+Menu:                      onLayout
+
 ProfilePhoto: onDraw
-Title: onDraw
-SubTitle: onDraw
-Menu: onDraw
+Title:        onDraw
+SubTitle:     onDraw
+Menu:         onDraw
 垂直的LinearLayout被测量了两次。第一次的时候，父LinearLayout要求以UNSPECIFIED spec的方式来测量。导致了垂直的LinearLayout也以这种方式测量它的  
 子view.此时它在它们返回值的基础上以EXACTLY spec的方式测量它的子view，但是它还没有结束。一旦在测量ProfilePhoto和Menu之后，父布局知道可用于垂直  
 的LinearLayout的尺寸大小。以AT_MOST height对Title 和 Subtitle测量之后导致了第二次传值。显然，每一个TextView (Title and Subtitle)被测量3次。  
@@ -89,3 +90,27 @@ Menu: onDraw
       2, 在构造函数里面，调用setWillNotDraw(false)，去掉其WILL_NOT_DRAW flag。
  ```
 
+第三种布局(自定义View)：
+这个布局在华硕手机的绘制流程：
+ ```
+ ProfilePhotoLayout:   [width: 720  exactly,  height: 880   at_most]
+  >ProfilePhoto:       [width: 80   exactly,  height: 80    exactly]
+  >Menu:               [width: 40   exactly,  height: 40    exactly]
+  >Title:              [width: 600  at_most,  height: 880   at_most]
+  >SubTitle:           [width: 600  at_most,  height: 826   at_most]
+ProfilePhotoLayout:   [width: 720  exactly,  height: 1024  at_most]
+  >ProfilePhoto:       [width: 80   exactly,  height: 80    exactly]
+  >Menu:               [width: 40   exactly,  height: 40    exactly]
+  >Title:              [width: 600  at_most,  height: 1024  at_most]
+  >SubTitle:           [width: 600  at_most,  height: 970   at_most]
+  
+ProfilePhoto: onLayout left:0,   top=0,  right=80,  bottom=80
+Title:        onLayout left:490, top=0,  right=720, bottom=54
+SubTitle:     onLayout left:0,   top=54, right=141, bottom=87
+Menu:         onLayout left:680, top=47, right=720, bottom=87
+
+ProfilePhoto: onDraw
+Title:        onDraw
+SubTitle:     onDraw
+Menu:         onDraw
+ ```
