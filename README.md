@@ -90,7 +90,7 @@ Menu:         onDraw
       2, 在构造函数里面，调用setWillNotDraw(false)，去掉其WILL_NOT_DRAW flag。
  ```
 
-第三种布局(自定义View)：
+第三种布局(自定义View)：  
 这个布局在华硕手机的绘制流程：
  ```
  ProfilePhotoLayout:   [width: 720  exactly,  height: 880   at_most]
