@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Shock Spock"
         android:textSize="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_toLeftOf="@id/menu"
         android:layout_toRightOf="@id/profile_photo" />
 
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:text="2rh, shanghai"
         android:textSize="12dp"
+        android:layout_marginLeft="10dp"
         android:layout_below="@id/title"
         android:layout_toLeftOf="@id/menu"
         android:layout_toRightOf="@id/profile_photo" />

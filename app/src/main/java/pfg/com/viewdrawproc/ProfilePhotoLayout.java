@@ -137,6 +137,7 @@ public class ProfilePhotoLayout extends RelativeLayout {
                         (MarginLayoutParams) child.getLayoutParams();
                 int measuredWidth = child.getMeasuredWidth();
                 int measuredHeight = child.getMeasuredHeight();
+                // 这几个值是相对父亲来说的吧？
                 int leftMargin = st.leftMargin;
                 int topMargin = st.topMargin;
                 int rightMargin = st.rightMargin;
@@ -169,6 +170,7 @@ public class ProfilePhotoLayout extends RelativeLayout {
 
                 cr = cl + measuredWidth;
                 cb = measuredHeight + ct;
+                // 这里只用考虑相对于父ViewGroup的情况，而不用去考虑整个布局
                 child.layout(cl, ct, cr, cb);
             }
         }
