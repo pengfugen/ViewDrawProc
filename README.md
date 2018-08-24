@@ -104,11 +104,12 @@ ProfilePhotoLayout:   [width: 720  exactly,  height: 1024  at_most]
   >Menu:               [width: 40   exactly,  height: 40    exactly]
   >Title:              [width: 600  at_most,  height: 1024  at_most]
   >SubTitle:           [width: 600  at_most,  height: 970   at_most]
-  
-ProfilePhoto: onLayout left:0,   top=0,  right=80,  bottom=80
-Title:        onLayout left:490, top=0,  right=720, bottom=54
-SubTitle:     onLayout left:0,   top=54, right=141, bottom=87
-Menu:         onLayout left:680, top=47, right=720, bottom=87
+ 
+ProfilePhotoLayout: onLayout left:0,   top=0,  right=720, bottom=87
+ProfilePhoto:       onLayout left:0,   top=0,  right=80,  bottom=80
+Title:              onLayout left:490, top=0,  right=720, bottom=54
+SubTitle:           onLayout left:0,   top=54, right=141, bottom=87
+Menu:               onLayout left:680, top=47, right=720, bottom=87
 
 ProfilePhoto: onDraw
 Title:        onDraw
